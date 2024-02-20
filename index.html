@@ -9,38 +9,50 @@
 <body>
     
     <div class="main-sections">
-        <div class="info-text">
+        <div class="section-1">
             <h2>Sagittarius</h2>
             <h4>November 22 - December 21</h4>
             <p>There is no storyteller quite like a Sagittarius—they can have the entire room hanging on their every word. But while they can show you grand dreams, it can sometimes be hard to pin them down and make them deliver on their promises.</p>
         </div>
-        <div class="page-title">
+        <div class="section-2">
             <h1>Signs</h1>
             <h3>OF THE</h3>
             <h1>Zodiac</h1>
         </div>
-        <div class="zodiac-image">
-            <img src="images/Sagittarius-Centaur.svg" alt="">
+        <div class="section-3">
+            <img class="zodiac-image" src="" alt="">
         </div>
     </div>
     <div class="buttons">
-        <img class="aries" src="images/Aries-Button.svg" alt="">
-        <img class="taurus" src="images/Taurus-Button.svg" alt="">
-        <img class="gemini" src="images/Gemini-Button.svg" alt="">
-        <img class="cancer" src="images/Cancer-Button.svg" alt="">
-        <img class="leo" src="images/Leo-Button.svg" alt="">
-        <img class="virgo" src="images/Virgo-Button.svg" alt="">
-        <img class="libra" src="images/Libra-Button.svg" alt="">
-        <img class="scorpio" src="images/Scorpio-Button.svg" alt="">
-        <img class="sagittarius" src="images/Sagittarius-Button.svg" alt="">
-        <img class="capricorn" src="images/Capricorn-Button.svg" alt="">
-        <img class="aquarius" src="images/Aquarius-Button.svg" alt="">
-        <img class="pisces" src="images/Pisces-Button.svg" alt="">
+        <img id="aries" class="button" src="images/Aries-Button.svg" alt="">
+        <img id="taurus" class="button" src="images/Taurus-Button.svg" alt="">
+        <img id="gemini" class="button" src="images/Gemini-Button.svg" alt="">
+        <img id="cancer" class="button" src="images/Cancer-Button.svg" alt="">
+        <img id="leo" class="button" src="images/Leo-Button.svg" alt="">
+        <img id="virgo" class="button" src="images/Virgo-Button.svg" alt="">
+        <img id="libra" class="button" src="images/Libra-Button.svg" alt="">
+        <img id="scorpio" class="button" src="images/Scorpio-Button.svg" alt="">
+        <img id="sagittarius" class="button" src="images/Sagittarius-Button.svg" alt="">
+        <img id="capricorn" class="button" src="images/Capricorn-Button.svg" alt="">
+        <img id="aquarius" class="button" src="images/Aquarius-Button.svg" alt="">
+        <img id="pisces" class="button" src="images/Pisces-Button.svg" alt="">
     </div>
+    
     <div class="enter-date">
         <h4>Enter Your Birthday:</h4>
         <span class="date-entry"></span>
     </div>
-
+    <audio id="audio_player"></audio>
+    <form action="">
+        <div class="control">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" placeholder="01/22/2024" required>
+        </div>
+        <div class="control">
+            <button>Submit</button>
+        </div>
+        <ul class="errors" hidden></ul>
+    </form>
+    <script src="js/main.js"></script>
 </body>
 </html>

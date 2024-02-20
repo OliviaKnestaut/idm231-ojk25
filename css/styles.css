@@ -30,6 +30,7 @@ html{
 
     background-color: var(--background);
     margin: .5vw 0 0 0;
+    overflow: hidden;
 }
 
 body{
@@ -78,7 +79,7 @@ p{
 
 }
 
-.page-title{
+.section-2{
     color: var(--text);
     text-align: center;
 }
@@ -88,10 +89,9 @@ p{
     justify-content: center;
     padding-top: 11.75vw;
     padding-bottom: 0;
-
 }
 
-.info-text{
+.section-1{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +100,7 @@ p{
     margin: -5vw 15vw 0vw 1vw;
 }
 
-.zodiac-image{
+.section-3{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,93 +109,97 @@ p{
     margin: -5vw 1vw 0vw 15vw;
 }
 
+img{
+    max-height: 30vw;
+}
+
 /*BUTTONS*/
 
-.aries{
+#aries{
     position: absolute;
     width: 9.417vw;
     top: 1.75vw;
     left: 45.25vw
 }
 
-.taurus{
+#taurus{
     position: absolute;
     width: 12.288vw;
     top: 2.5vw;
     left: 52.25vw;
 }
 
-.gemini{
+#gemini{
     position: absolute;
     width: 12.116vw;
     top: 8.55vw;
     left: 58.7vw;
 }
 
-.cancer{
+#cancer{
     position: absolute;
     width: 10.651vw;
     top: 18.4vw;
     left: 62.75vw;
 }
 
-.leo{
+#leo{
     position: absolute;
     width: 11.866vw;
     top: 25.45vw;
     left: 58.7vw;
 }
 
-.virgo{
+#virgo{
     position: absolute;
     width: 12.288vw;
     top: 31.84vw;
     left: 52.3vw;
 }
 
-.libra{
+#libra{
     position: absolute;
     width: 9.417vw;
     top: 35.9vw;
     left: 45.25vw;
 }
 
-.scorpio{
+#scorpio{
     position: absolute;
     width: 12.288vw;
     top: 31.84vw;
     right: 52.3vw;
 }
 
-.sagittarius{
+#sagittarius{
     position: absolute;
     width: 13.24vw;
     top: 25.45vw;
     right: 58.7vw;
 }
 
-.capricorn{
+#capricorn{
     position: absolute;
     width: 9.31vw;
     top: 18.48vw;
     right: 62.82vw;
 }
 
-.aquarius{
+#aquarius{
     position: absolute;
     width: 11.866vw;
     top: 8.65vw;
     right: 58.8vw;
 }
 
-.pisces{
+#pisces{
     position: absolute;
     width: 12.288vw;
     top: 2.5vw;
     right: 52.35vw;
 }
 
-.aries:hover, .taurus:hover, .gemini:hover, .cancer:hover, .leo:hover, .virgo:hover, .libra:hover, .scorpio:hover, .sagittarius:hover, .capricorn:hover, .aquarius:hover, .pisces:hover{
+#aries:hover, #taurus:hover, #gemini:hover, #cancer:hover, #leo:hover, #virgo:hover, #libra:hover, #scorpio:hover, #sagittarius:hover, #capricorn:hover, #aquarius:hover, #pisces:hover{
     filter: drop-shadow(0 0 1vw #FFFFFF);
 }
 
