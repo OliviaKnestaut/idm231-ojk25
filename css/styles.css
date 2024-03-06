@@ -61,7 +61,7 @@ h3{
     margin: 0;
 }
 
-h4{
+h4, label{
     font-family: var(--Balthazar);
     font-size: 1.75vw;
     color: var(--text);
@@ -206,17 +206,42 @@ img{
 
 /*DATE ENTRY*/
 
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vw;
+    width: 50vw;
+}
+
 .enter-date{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vw;
+    margin-top: 1vw;
 }
 
 .date-entry{
-    background-color: var(--text);
     width: 8vw;
     height: 2vw;
     margin: 1vw;
+}
+
+.control h4 {
+    background-color: var(--text);
+    color: var(--background);
+    font-family: var(--Montserrat);
+    text-align: center;
+    font-size: 2.2vw;
+    width: 3vw;
+    height: 2vw;
     border-radius: 50vw;
+    margin-left: 1vw;
+    padding-bottom: 0.8vw;
+}
+
+.control h4:hover{
+    background-color: var(--background);
+    color: var(--text);
+    filter: drop-shadow(0 0 .5vw #FFFFFF);
 }

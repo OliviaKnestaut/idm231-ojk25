@@ -39,20 +39,19 @@
     </div>
     
     <div class="enter-date">
-        <h4>Enter Your Birthday:</h4>
-        <span class="date-entry"></span>
+        <form action="">
+            <div class="control">
+                <label for="birthday">Enter Your Birthday:</label>
+                <input type="date" name="birthday" placeholder="01/22/2024" required>
+            </div>
+            <div class="control">
+                <h4>→</h4>
+            </div>
+            <ul class="errors" hidden></ul>
+        </form>
     </div>
     <audio id="audio_player"></audio>
-    <form action="">
-        <div class="control">
-            <label for="birthday">Birthday</label>
-            <input type="date" name="birthday" placeholder="01/22/2024" required>
-        </div>
-        <div class="control">
-            <button>Submit</button>
-        </div>
-        <ul class="errors" hidden></ul>
-    </form>
+    
     <script src="js/main.js"></script>
 </body>
 </html>
