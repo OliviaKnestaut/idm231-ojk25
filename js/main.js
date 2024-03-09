@@ -78,7 +78,6 @@ helpButton.addEventListener("click", () => {
 
 
 //Button Selection
-
 for (let button of buttons) {
     button.addEventListener("click", function(e) {
         if(signIsActive != e.target.id){
@@ -158,7 +157,6 @@ function handle_submit(event){
     } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
         sign = 'aquarius';
     }
-
     changeMedia(sign);
 }
 
@@ -166,8 +164,8 @@ if (form){
     form.addEventListener('submit', handle_submit, false);
 }
 
-//Change Media on Site
 
+//Change Media on Site
 function changeMedia(sign) {
     //change img
     document.querySelector('.zodiac-image').src = `images/${sign}-img.svg`;
