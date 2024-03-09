@@ -47,7 +47,7 @@ const sign_info = [
     dates: 'February 19 - March 20',
     text: 'If you are looking to escape the mundane everyday grind, a Pisces’s imaginative mind can whisk you away into a realm of fantasy. Their kind, nurturing personality can prove to be a double-edged sword though, because their overtly sensitive heart is easily wounded, further compounded by a tendency to play the victim.'
     }
-]
+];
 
 const buttons = document.getElementsByClassName("button");
 const audio_player = document.getElementById('audio_player');
@@ -134,31 +134,29 @@ function handle_submit(event){
     let sign = 'none';
 
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)){
-        sign = 'capricorn'
-    }
-    else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-        sign = 'sagittarius'
-    }
-    else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-        sign = 'scorpio'
+        sign = 'capricorn';
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        sign = 'sagittarius';
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+        sign = 'scorpio';
     } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-        sign = 'libra'
+        sign = 'libra';
     } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-        sign = 'virgo'
+        sign = 'virgo';
     } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-        sign = 'leo'
+        sign = 'leo';
     } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-        sign = 'cancer'
+        sign = 'cancer';
     } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-        sign = 'gemini'
+        sign = 'gemini';
     } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-        sign = 'taurus'
+        sign = 'taurus';
     } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-        sign = 'aries'
+        sign = 'aries';
     } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-        sign = 'pisces'
+        sign = 'pisces';
     } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-        sign = 'aquarius'
+        sign = 'aquarius';
     }
 
     changeMedia(sign);
