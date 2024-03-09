@@ -34,7 +34,7 @@ html{
 }
 
 body{
-    background-image: url("../images/Backgrund-Circle.svg");
+    background-image: url("../images/Background-Circle.svg");
     background-size: 44vw;
     background-repeat: no-repeat;
     background-position: top;
@@ -66,7 +66,16 @@ h4, label{
     font-size: 1.75vw;
     color: var(--text);
     margin: 1vw 0;
+}
 
+h5{
+    font-family: var(--Montserrat);
+    font-weight: 600;
+    font-size: 2vw;
+    word-spacing: .25vw;
+    color: var(--text);
+    text-align: center;
+    margin: 1vw;
 }
 
 p{
@@ -76,7 +85,6 @@ p{
     word-spacing: .25vw;
     color: var(--text);
     margin: 0;
-
 }
 
 .section-2{
@@ -218,7 +226,7 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1vw;
+    margin-top: 2vw;
 }
 
 .date-entry{
@@ -227,21 +235,52 @@ form{
     margin: 1vw;
 }
 
-.control h4 {
+.control button {
     background-color: var(--text);
     color: var(--background);
     font-family: var(--Montserrat);
+    font-weight: 600;
     text-align: center;
     font-size: 2.2vw;
     width: 3vw;
-    height: 2vw;
+    height: 3vw;
     border-radius: 50vw;
     margin-left: 1vw;
     padding-bottom: 0.8vw;
+    border: 0;
 }
 
-.control h4:hover{
+.control button:hover{
     background-color: var(--background);
     color: var(--text);
     filter: drop-shadow(0 0 .5vw #FFFFFF);
+}
+
+/*Help-Button*/
+
+.help-button{
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    width: 5vw;
+}
+
+.help-button:hover{
+    filter: drop-shadow(0 0 .5vw #FFFFFF);
+}
+
+.help{
+    position: absolute;
+}
+
+#help-1{
+    visibility: hidden;
+    top: 2vw;
+    right: 10vw;
+}
+
+#help-2 {
+    visibility: hidden;
+    top: 33vw;
+    right: 16vw;
 }

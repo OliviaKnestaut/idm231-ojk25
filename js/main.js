@@ -50,24 +50,52 @@ const sign_info = [
 ]
 
 const buttons = document.getElementsByClassName("button");
+const audio_player = document.getElementById('audio_player');
+let sound_name = '';
+const audio_file = new Audio(sound_name);
 let signIsActive = '';
+
+const helpButton = document.querySelector('.help-button');
+let helpOn = false;
+
+//Help Pop-ups
+helpButton.addEventListener("click", () => {
+    if(!helpOn){
+        //Make help visible
+        document.getElementById('help-1').style.visibility = "visible";
+        document.getElementById('help-2').style.visibility = "visible";
+        console.log('Help On');
+        helpOn = true;
+    }
+    else{
+        //Hide help
+        document.getElementById('help-1').style.visibility = "hidden";
+        document.getElementById('help-2').style.visibility = "hidden";
+        console.log('Help Off');
+        helpOn = false;
+    }
+});
+
+
+//Button Selection
 
 for (let button of buttons) {
     button.addEventListener("click", function(e) {
         if(signIsActive != e.target.id){
             console.log(e.target.id);
-            let sign = e.target.id;
-            //change img
-            document.querySelector('.zodiac-image').src = `images/${sign}-img.svg`;
-            console.log(`images/${sign}-img.svg`);
-            //change text
-            let signText = findSign(sign);
-            console.log(signText);
-            document.getElementById('sign-title').innerHTML = signText[0];
-            document.getElementById('sign-dates').innerHTML = signText[1];
-            document.getElementById('sign-text').innerHTML = signText[2];
-
+            //Change img, text, and play audio
+            changeMedia(e.target.id);
+            //Change active sign
             signIsActive = e.target.id;
+
+            //Hide Help when selection made
+            if(helpOn){
+                //Hide help
+                document.getElementById('help-1').style.visibility = "hidden";
+                document.getElementById('help-2').style.visibility = "hidden";
+                console.log('Help Off');
+                helpOn = false;
+            }
         }
         else{
             //Unclick
@@ -75,10 +103,99 @@ for (let button of buttons) {
             document.getElementById('sign-title').innerHTML = '';
             document.getElementById('sign-dates').innerHTML = '';
             document.getElementById('sign-text').innerHTML = '';
+            audio_player.pause();
             console.log('Reverted');
             signIsActive = '';
         }
     });
+}
+
+//Form Submission
+const form = document.querySelector('form');
+
+function handle_submit(event){
+    event.preventDefault();
+
+    //Hide on date entry
+    if(helpOn){
+        document.getElementById('help-1').style.visibility = "hidden";
+        document.getElementById('help-2').style.visibility = "hidden";
+        console.log('Help Off');
+        helpOn = false;
+    }
+
+    console.log('Form submission:');
+    console.log(form?.elements);
+    console.log(form?.elements['birthday'].value);
+
+    const month = Number(form.elements['birthday'].value.split('-')[1]);
+    const day = Number(form.elements['birthday'].value.split('-')[2]);
+    console.log(month, day);
+    let sign = 'none';
+
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)){
+        sign = 'capricorn'
+    }
+    else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        sign = 'sagittarius'
+    }
+    else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+        sign = 'scorpio'
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+        sign = 'libra'
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        sign = 'virgo'
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        sign = 'leo'
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+        sign = 'cancer'
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+        sign = 'gemini'
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        sign = 'taurus'
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        sign = 'aries'
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        sign = 'pisces'
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        sign = 'aquarius'
+    }
+
+    changeMedia(sign);
+}
+
+if (form){
+    form.addEventListener('submit', handle_submit, false);
+}
+
+//Change Media on Site
+
+function changeMedia(sign) {
+    //change img
+    document.querySelector('.zodiac-image').src = `images/${sign}-img.svg`;
+    console.log(`images/${sign}-img.svg`);
+    //change text
+    let signText = findSign(sign);
+    console.log(signText);
+    document.getElementById('sign-title').innerHTML = signText[0];
+    document.getElementById('sign-dates').innerHTML = signText[1];
+    document.getElementById('sign-text').innerHTML = signText[2];
+    //play audio
+
+    //HOW DO I USE THIS "CAN PLAY THROUGH THINGIE"
+    audio_file?.addEventListener("canplaythrough", () => {
+        console.log('canplaythrough');
+    });
+
+    console.log(`sounds/${sign}-audio.mp3`);
+    if (audio_player != null) {
+        if (audio_player && !audio_player.paused){
+            audio_player.pause();
+        }
+        audio_player.currentTime = 0;
+        audio_player.src = `sounds/${sign}-audio.mp3`;
+        audio_player.play();
+    }
 }
 
 function findSign(calledSign) {
@@ -90,92 +207,3 @@ function findSign(calledSign) {
         }
     }
 }
-
-
-
-const btn_play = document.getElementById('btn9_play');
-
-const audio_element = new Audio(sound_file);
-const audio_player = document.getElementById('audio_player');
-
-function play_audio(audio_element, src){
-    if (audio_element && !audio_element.paused){
-        audio_element.pause();
-    }
-    audio_element.currentTime = 0;
-    audio_element.src = src;
-    audio_element.play();
-}
-
-audio_element?.addEventListener('canplaythrough', (event) =>{
-    //console.log('can play through');
-
-    btn_play?.addEventListener('click', ()=>{
-        if (audio_player != null) {
-            play_audio(audio_player, sound_file);
-        }
-    });
-});
-
-
-
-const form = document.querySelector('form');
-const error_list = document.querySelector('.errors');
-
-function log_birthday(birthday){
-    //console.log(birthday);
-    const date = {
-        year: birthday[0],
-        month: birthday[1],
-        day: birthday[2]
-    }
-    return date;    
-}
-
-function handle_submit(event){
-    event.preventDefault();
-    //console.log('form submission');
-    //console.log(form);
-    //console.log(form.elements);
-    //console.log(form.elements['birthday'].value);
-    //console.groupEnd();
-
-    const errors = [];
-
-    //error checking: is b day valid
-
-    if(errors.length){
-        errors.forEach((error) => {
-            const li = document.createElement('li');
-            const text = doucment.createTextNode('error');
-
-            li.appendChild(text);
-            error_list.appendChild(li);
-            error_list.hidden = false;
-        });
-        return false;
-    }else{
-        error_list.hidden = true;
-        error_list.innerHTML = '';
-    }
-
-    const date_object = log_birthday(form.elements['birthday'].value.split('-'));
-    //console.log(date_object.day);
-
-}
-
-if (form){
-    form.addEventListener('submit', handle_submit);
-}
-
-
-//Minor scroll bar issue fix for design
-function _calculateScrollbarWidth() {
-    document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
-}
-// recalculate on resize
-window.addEventListener('resize', _calculateScrollbarWidth);
-// recalculate on dom load
-document.addEventListener('DOMContentLoaded', _calculateScrollbarWidth); 
-// recalculate on load (assets loaded as well)
-window.addEventListener('load', _calculateScrollbarWidth);
