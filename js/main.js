@@ -178,11 +178,6 @@ function changeMedia(sign) {
     document.getElementById('sign-text').innerHTML = signText[2];
     //play audio
 
-    //HOW DO I USE THIS "CAN PLAY THROUGH THINGIE"
-    audio_file?.addEventListener("canplaythrough", () => {
-        console.log('canplaythrough');
-    });
-
     console.log(`sounds/${sign}-audio.mp3`);
     if (audio_player != null) {
         if (audio_player && !audio_player.paused){
