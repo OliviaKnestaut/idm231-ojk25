@@ -220,7 +220,7 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 0.5vw;
+    margin-top: 0.25vw;
     width: 18vw;
 }
 
@@ -248,9 +248,9 @@ form{
     width: 3vw;
     height: 3vw;
     border-radius: 50vw;
-    margin-left: 1vw;
     padding-bottom: 0.8vw;
     border: 0;
+    margin: 0.5vw;
 }
 
 .control button:hover{
