@@ -266,6 +266,15 @@ label {
     margin-top: 1vw;
 }
 
+input[type="date"]
+{
+    font-family: var(--Balthazar);
+    font-size: 1.25vw;
+    border-radius: 50vw;
+    border: 0;
+    padding: 0.5vw;
+}
+
 /*Help-Button*/
 
 .help-button{
