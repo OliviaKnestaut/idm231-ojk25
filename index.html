@@ -14,7 +14,7 @@
             <img src="images/Arrow.svg" alt="">
         </div>
         <div id="help-2" class="help">
-            <h5>or Enter <br>your Birthday</h5>
+            <h5>Enter your Birthday <br>in the Center</h5>
             <img src="images/Arrow.svg" alt="">
         </div>
     </div>
@@ -28,6 +28,17 @@
             <h1>Signs</h1>
             <h3>OF THE</h3>
             <h1>Zodiac</h1>
+            <div class="enter-date">
+                <label for="birthday">Enter Your Birthday:</label>
+                <form>
+                    <div class="control">
+                        <input type="date" id="birthday" required>
+                    </div>
+                    <div class="control">
+                        <button type="submit">→</button>
+                    </div>
+                </form>
+            </div>
         </div>
         <div class="section-3">
             <img class="zodiac-image" src="images/Blue-Square.svg" alt="">
@@ -48,17 +59,7 @@
         <img id="pisces" class="button" src="images/Pisces-Button.svg" alt="">
     </div>
     
-    <div class="enter-date">
-        <form>
-            <div class="control">
-                <label for="birthday">Enter Your Birthday:</label>
-                <input type="date" id="birthday" required>
-            </div>
-            <div class="control">
-                <button type="submit">→</button>
-            </div>
-        </form>
-    </div>
+    
     <audio id="audio_player"></audio>
     
     <script src="js/main.js"></script>
