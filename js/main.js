@@ -98,7 +98,7 @@ for (let button of buttons) {
         }
         else{
             //Unclick
-            document.querySelector('.zodiac-image').src = '';
+            document.querySelector('.zodiac-image').src = 'images/Blue-Square.svg';
             document.getElementById('sign-title').innerHTML = '';
             document.getElementById('sign-dates').innerHTML = '';
             document.getElementById('sign-text').innerHTML = '';
